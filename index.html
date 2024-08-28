@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+  </head>
+  <body id="body">
+    <div id="container">
+      <h1 id="h1">
+        My Div
+        <img src="abu logo.png" id="img" />
+      </h1>
+      <p id="para" onclick='alert("Everything is Okay!")'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus beatae
+        asperiores est unde hic debitis expedita facere, ad iste, adipisci et
+        ullam magnam nemo eveniet blanditiis. Officiis explicabo numquam minus!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo modi
+        deleniti velit ipsa distinctio quisquam, ab praesentium quibusdam
+        commodi, non dolor delectus harum laborum alias eaque ipsam. Illo, odit
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque veniam
+        hic commodi tenetur provident corrupti perferendis corporis nobis?
+        Voluptatum nesciunt delectus obcaecati, cumque illo impedit itaque
+        distinctio facilis ut aperiam. Facilis, perferendis enim ipsam ullam
+        error sint provident ab, amet corporis vitae quae autem, quo ipsa
+        mollitia. Veritatis minus atque officia aspernatur quasi, laudantium
+        corrupti molestiae temporibus quas, assumenda unde! Ullam, est officia
+        maxime fugit nobis suscipit totam earum? Temporibus atque quaerat minus
+        optio consequuntur, pariatur magni. Eligendi qui, iste ab enim itaque,
+        consectetur voluptas, nihil autem ut veritatis assumenda! Asperiores
+        facilis illum nemo adipisci temporibus exercitationem in, fuga ipsum
+        dolorum ut id labore ipsam blanditiis laborum voluptate cupiditate atque
+        quidem dolore numquam facere error aspernatur distinctio deleniti
+        repellendus! Laboriosam. Dolorum est deserunt voluptatum, nostrum
+        reprehenderit quos ut vero sint itaque eius voluptates vel ipsa dolore
+        esse harum ea aliquam fuga quae amet? Animi vero repudiandae eligendi.
+        Fuga, officia reiciendis. in!
+      </p>
+      <button onclick='prompt("Enter Your Name")' id="btn">Click Here</button>
+    </div>
+
+    <script>
+      const div = document.getElementById("container");
+      const button = document.getElementById("btn");
+      const p = document.getElementById("para");
+      const body = document.getElementById("body");
+      const img = document.getElementById("img");
+      const h1 = document.getElementById("h1");
+
+      body.style.display = "flex";
+      body.style.justifyContent = "center";
+      body.style.backgroundColor = "gray";
+      img.style.width = "45px";
+
+      h1.style.display = "flex";
+      h1.style.justifyContent = "center";
+      h1.style.alignItems = "center";
+
+      div.style.backgroundColor = "pink";
+      div.style.width = "50%";
+      div.style.padding = "10px";
+      div.style.margin = "30px";
+      div.style.borderRadius = "30px";
+      div.style.borderRadius = "30px";
+      div.style.textAlign = "center";
+      div.style.justifyContent = "center";
+      p.style.textAlign = "justify";
+
+      button.style.backgroundColor = "purple";
+      button.style.padding = "10px";
+      button.style.color = "white";
+      button.style.border = "none";
+      button.style.borderRadius = "7px";
+    </script>
+  </body>
+</html>
