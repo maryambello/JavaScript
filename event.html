@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="btn">Click Here</button>
+    <input type="text" id="name" placeholder="Enter your name" />
+    <div id="wrapper"></div>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const wrapper = document.getElementById("wrapper");
+      const name = document.getElementById("name");
+      console.log(name);
+
+      btn.onclick = function () {
+        console.log("i click on here!");
+        document.body.style.backgroundColor = "pink";
+
+        wrapper.style.padding = "20px";
+        wrapper.style.backgroundColor = "yellow";
+        wrapper.style.margin = "20px";
+        wrapper.style.fontSize = "20px";
+      };
+
+      btn.onmouseover = function () {
+        document.body.style.backgroundColor = "purple";
+      };
+      name.onkeyup = function (e) {
+        wrapper.innerHTML = e.target.value;
+        console.log(wrapper);
+      };
+    </script>
+  </body>
+</html>

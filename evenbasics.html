@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Basics</title>
+  </head>
+  <body>
+    <h1>Form Event</h1>
+    <form action="/dog" id="tweetForm">
+      <input type="text" name="username" placeholder="username" />
+      <input type="text" name="tweet" placeholder="tweet" />
+      <button>Post Tweet</button>
+    </form>
+    <h2>Tweets:</h2>
+    <ul id="tweets">
+      <li>I'M MARYAM!!</li>
+      <li>I'M AISHA!!</li>
+    </ul>
+
+    <script>
+      const tweetForm = document.querySelector("#tweetForm");
+      const tweetsContainer = document.querySelector("#tweets");
+      tweetForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // const usernameInput = document.querySelectorAll("input")[0];
+        // const tweetsInput = document.querySelectorAll("input")[1];
+        const usernameInput = tweetForm.elements.username;
+        const tweetsInput = tweetForm.elements.tweet;
+        addTweet(usernameInput.value, tweetsInput.value);
+        usernameInput.value = "";
+        tweetsInput.value = "";
+      });
+      const addTweet = (username, tweet) => {
+        const newTweet = document.createElement("li");
+        const bTag = document.createElement("b");
+        bTag.append(username);
+        newTweet.append(bTag);
+        newTweet.append(`- ${tweet}`);
+        tweetsContainer.append(newTweet);
+      };
+      tweetsContainer.addEventListener("click", function (e) {
+        e.target.nodeName === "li";
+        e.target.remove();
+      });
+    </script>
+  </body>
+</html>

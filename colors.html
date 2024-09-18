@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="colors.css " />
+  </head>
+  <body>
+    <button id="btn">Click me</button>
+    <div id="container"></div>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const container = document.getElementById("container");
+
+      let count = 0;
+      btn.onclick = function () {
+        const container = document.getElementById("container");
+
+        const container_margin_left = parseInt(
+          window.getComputedStyle(container).marginLeft
+        );
+
+        const container_margin_top = parseInt(
+          window.getComputedStyle(container).marginTop
+        );
+
+        const container_margin_right = parseInt(
+          window.getComputedStyle(container).marginRight
+        );
+
+        const red = Math.random() * 256;
+        const blue = Math.random() * 256;
+        const green = Math.random() * 256;
+
+        container.style.backgroundColor = `rgb(${red},${blue},${green})`;
+
+        if (count < 5) {
+          container.style.marginLeft = container_margin_left + 20 + "px";
+        } else if (count < 10) {
+          container.style.marginTop = container_margin_top + 20 + "px";
+        }
+
+        count++;
+        console.log(count);
+      };
+    </script>
+  </body>
+</html>

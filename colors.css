@@ -1,0 +1,15 @@
+button {
+  background-color: brown;
+  padding: 14px;
+  border: none;
+  margin: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#container {
+  background-color: gray;
+  height: 200px;
+  width: 200px;
+}

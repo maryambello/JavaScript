@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <form id="form_grp">
+      <h1>Register</h1>
+      <div class="box1">
+        <label for="text" class="label">Full Name</label>
+        <input id="name" type="text" placeholder="Enter your name" />
+        <span id="error-name"></span>
+      </div>
+      <div class="box1">
+        <label for="text" class="label">Email Address</label>
+        <input id="email" type="email" placeholder="Enter your email" />
+        <span id="error-email"></span>
+      </div>
+      <div class="box2">
+        <label for="text" class="label">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+        />
+        <img src="hide.svg" id="eyeicon" />
+
+        <span id="error-password"></span>
+      </div>
+      <div id="">
+        <button id="btn" type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script>
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const eyeicon = document.getElementById("eyeicon");
+      const password = document.getElementById("password");
+      const form_grp = document.getElementById("form_grp");
+      const error_name = document.getElementById("error-name");
+      const error_email = document.getElementById("error-email");
+      const error_password = document.getElementById("error-password");
+
+      eyeicon.onclick = function () {
+        if (password.type == "password") {
+          password.type = "text";
+          eyeicon.src = "show.svg";
+        } else {
+          password.type = "password";
+          eyeicon.src = "hide.svg";
+        }
+      };
+
+      form_grp.onsubmit = function (e) {
+        e.preventDefault();
+
+        if (name.value.trim().length < 1) {
+          error_name.innerHTML = "name is required";
+          error_name.style.color = "red";
+        } else if (email.value.trim().length < 1) {
+          error_email.innerHTML = "email is required";
+          error_email.style.color = "red";
+        } else if (password.value.trim().length < 1) {
+          error_password.innerHTML = "password is required";
+          error_password.style.color = "red";
+        } else {
+          error_name.innerHTML = "";
+          error_email.innerHTML = "";
+          error_password.innerHTML = "";
+        }
+      };
+    </script>
+  </body>
+</html>

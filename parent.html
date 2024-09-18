@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="parent.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptas
+      quae veniam velit a, suscipit pariatur nobis officiis laboriosam laborum
+      culpa rem explicabo dicta. Iusto officiis totam minus ratione velit!
+
+      <span id="small">THIS IS A SPAN</span>
+    </p>
+    <div id="container"></div>
+
+    <script>
+      document.body.style.display = "flex";
+      document.body.style.justifyContent = "center";
+      document.body.style.alignItems = "center";
+      document.querySelector("p").style.display = "none";
+      let container = document.getElementById("container");
+      container.style.display = "flex";
+      container.style.flexDirection = "column";
+      container.style.width = "350px";
+      container.style.backgroundColor = "#2a5694c2";
+      container.style.borderRadius = "10px";
+      container.style.padding = "30px";
+      container.style.margin = "10px";
+
+      let input = document.createElement("input");
+
+      input.placeholder = "Enter your name";
+      input.style.border = "1px solid gray";
+      input.style.padding = "12px";
+      input.style.borderRadius = "3px";
+      input.style.backgroundColor = "#e6dcdc";
+      input.style.border = "none";
+      input.style.fontSize = "18px";
+      input.onfocus = function () {
+        input.style.outline = "none";
+      };
+
+      let label = document.createElement("label");
+      label.innerHTML = " Full Name";
+      label.style.fontSize = "18px";
+      label.style.fontWeight = 600;
+      label.style.color = "white";
+
+      let input1 = document.createElement("input");
+
+      input1.placeholder = "Enter your email";
+      input1.type = "Email";
+      input1.style.border = "1px solid gray";
+      input1.style.padding = "12px";
+      input1.style.borderRadius = "3px";
+      input1.style.backgroundColor = "#e6dcdc";
+      input1.style.border = "none";
+      input1.style.fontSize = "18px";
+      input1.onfocus = function () {
+        input1.style.outline = "none";
+      };
+
+      let label_1 = document.createElement("label_1");
+      label_1.innerHTML = "Email";
+      label_1.style.fontSize = "18px";
+      label_1.style.fontWeight = 600;
+      label_1.style.color = "white";
+      label_1.style.marginTop = "18px";
+
+      let input2 = document.createElement("input");
+
+      input2.placeholder = "Enter your password";
+      input2.type = "password";
+      input2.style.border = "1px solid gray";
+      input2.style.padding = "12px";
+      input2.style.borderRadius = "3px";
+      input2.style.backgroundColor = "#e6dcdc";
+      input2.style.border = "none";
+      input2.style.fontSize = "18px";
+
+      input2.onfocus = function () {
+        input2.style.outline = "none";
+      };
+
+      let label_2 = document.createElement("label2");
+      label_2.innerHTML = "Password";
+      label_2.style.fontSize = "18px";
+      label_2.style.fontWeight = 600;
+      label_2.style.color = "white";
+      label_2.style.marginTop = "18px";
+
+      let btn = document.createElement("button");
+      btn.innerHTML = "Log in";
+      btn.style.marginTop = "22px";
+      btn.style.padding = "12px";
+      btn.style.border = "none";
+      btn.style.fontSize = "18px";
+      btn.style.backgroundColor = "#e6dcdc";
+      btn.style.borderRadius = "3px";
+      btn.style.cursor = "pointer";
+      btn.style.fontWeight = 600;
+      btn.style.color = "#626387";
+
+      container.append(label);
+      container.append(input);
+
+      container.append(label_1);
+      container.append(input1);
+
+      container.append(label_2);
+      container.append(input2);
+      container.append(btn);
+    </script>
+  </body>
+</html>

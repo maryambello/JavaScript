@@ -8,7 +8,7 @@
   <body id="body">
     <div id="container">
       <h1 id="h1">
-        My Div
+        <span> My Div</span>
         <img src="abu logo.png" id="img" />
       </h1>
       <p id="para" onclick='alert("Everything is Okay!")'>
@@ -36,7 +36,12 @@
         esse harum ea aliquam fuga quae amet? Animi vero repudiandae eligendi.
         Fuga, officia reiciendis. in!
       </p>
-      <button onclick='prompt("Enter Your Name")' id="btn">Click Here</button>
+      <button
+        onclick="document.getElementById('para').style.color= 'white'"
+        id="btn"
+      >
+        Click Here
+      </button>
     </div>
 
     <script>
@@ -49,16 +54,19 @@
 
       body.style.display = "flex";
       body.style.justifyContent = "center";
-      body.style.backgroundColor = "gray";
+      body.style.backgroundColor = "#dadada";
       img.style.width = "45px";
 
       h1.style.display = "flex";
-      h1.style.justifyContent = "center";
+      h1.style.justifyContent = "space-between";
       h1.style.alignItems = "center";
+      h1.style.flexDirection = "row-reverse";
 
       div.style.backgroundColor = "pink";
       div.style.width = "50%";
-      div.style.padding = "10px";
+      div.style.padding = "25px";
+      div.style.lineHeight = 1.5;
+
       div.style.margin = "30px";
       div.style.borderRadius = "30px";
       div.style.borderRadius = "30px";
