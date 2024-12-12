@@ -7,8 +7,8 @@ html,
 body {
   height: 100%;
 }
-.container {
-  box-shadow: 10px 10px blue;
+#container {
+  box-shadow: -3px -5px 10px#7b7d848a;
 }
 
 p {
@@ -19,12 +19,4 @@ p {
   cursor: pointer;
   width: 30%;
   color: #fff;
-}
-
-span {
-  display: block;
-  background-color: cadetblue;
-  border-radius: 3px;
-  padding: 5px;
-  margin-top: px;
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signature.css" />
+    <title>signature pad</title>
+  </head>
+  <body>
+    <h1>Signature</h1>
+    <div class="signature-container">
+      <canvas id="signature-pad" width="300" height="150"></canvas>
+    </div>
+    <button id="clear-button">Clear</button>
+    <button id="save-button">Save</button>
+
+    <script>
+      const canvas = document.getElementById("signature-pad");
+      const clearButton = document.getElementById("clear-button");
+      const saveButton = document.getElementById("save-button");
+      const ctx = canvas.getContext("2d");
+      let drawing = false;
+      let prevX = 0;
+      let prevY = 0;
+
+      canvas.addEventListener("mousedown", (e) => {
+        drawing = true;
+        prevX = e.clientX = canvas.getBoundingClientRect().left;
+        prevY = e.clientY = canvas.getBoundingClientRect().top;
+      });
+
+      canvas.addEventListener("mousemove", (e) => {
+        if (!drawing) return;
+        draw(
+          e.clientX - canvas.getBoundingClientRect().left,
+          e.clientY - canvas.getBoundingClientRect().top
+        );
+      });
+
+      canvas.addEventListener("mouseup", () => {
+        drawing = false;
+      });
+      canvas.addEventListener("mouseleave", () => {
+        drawing = false;
+      });
+
+      function draw(x, y) {
+        ctx.beginPath();
+        ctx.strokeStyle = "#000";
+        ctx.lineWidth = 2;
+        ctx.lineJoin = "round";
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(x, y);
+        ctx.closePath();
+        ctx.stroke();
+        prevX = x;
+        prevY = y;
+      }
+      clearButton.addEventListener("click", () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+
+      saveButton.addEventListener("click", () => {
+        const dataURL = canvas.toDataURL("image/png");
+        const a = document.createElement("a");
+        a.href = dataURL;
+        a.download = "singnature.png";
+        a.click();
+      });
+    </script>
+  </body>
+</html>

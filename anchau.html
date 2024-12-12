@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="anchau.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <form>
+          <div class="form-group">
+            <label for=""> My Name</label>
+            <input type="text" />
+          </div>
+        </form>
+      </section>
+      <section>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            exercitationem a rem eveniet voluptate aspernatur fugit pariatur
+            reiciendis at eum. Distinctio dolorem vitae ex hic possimus, nemo
+            iste ratione sint!
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let div = document.querySelector(".form-group");
+      let sibdiv = div.parentElement.parentElement.parentElement.children[1];
+      sibdiv.style.backgroundColor = "red";
+      sibdiv.style.color = "white";
+      sibdiv.style.padding = "10px";
+    </script>
+  </body>
+</html>

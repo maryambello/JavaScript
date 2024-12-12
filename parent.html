@@ -14,7 +14,7 @@
 
       <span id="small">THIS IS A SPAN</span>
     </p>
-    <div id="container"></div>
+    <form id="container"></form>
 
     <script>
       document.body.style.display = "flex";
@@ -23,96 +23,143 @@
       document.querySelector("p").style.display = "none";
       let container = document.getElementById("container");
       container.style.display = "flex";
+      container.style.alignItems = "center";
+
       container.style.flexDirection = "column";
       container.style.width = "350px";
       container.style.backgroundColor = "#2a5694c2";
       container.style.borderRadius = "10px";
-      container.style.padding = "30px";
-      container.style.margin = "10px";
+      container.style.padding = "15px";
+
+      let div = document.createElement("div");
+
+      let span = document.createElement("span");
 
       let input = document.createElement("input");
-
       input.placeholder = "Enter your name";
-      input.style.border = "1px solid gray";
-      input.style.padding = "12px";
-      input.style.borderRadius = "3px";
-      input.style.backgroundColor = "#e6dcdc";
-      input.style.border = "none";
-      input.style.fontSize = "18px";
-      input.onfocus = function () {
-        input.style.outline = "none";
-      };
 
       let label = document.createElement("label");
-      label.innerHTML = " Full Name";
-      label.style.fontSize = "18px";
-      label.style.fontWeight = 600;
-      label.style.color = "white";
+      label.innerHTML = "Full Name";
 
-      let input1 = document.createElement("input");
+      let div_1 = document.createElement("div");
 
-      input1.placeholder = "Enter your email";
-      input1.type = "Email";
-      input1.style.border = "1px solid gray";
-      input1.style.padding = "12px";
-      input1.style.borderRadius = "3px";
-      input1.style.backgroundColor = "#e6dcdc";
-      input1.style.border = "none";
-      input1.style.fontSize = "18px";
-      input1.onfocus = function () {
-        input1.style.outline = "none";
-      };
+      let span_1 = document.createElement("span");
 
-      let label_1 = document.createElement("label_1");
+      let input_1 = document.createElement("input");
+      input_1.placeholder = "Enter your email";
+      input_1.type = "email";
+
+      let label_1 = document.createElement("label");
+
       label_1.innerHTML = "Email";
-      label_1.style.fontSize = "18px";
-      label_1.style.fontWeight = 600;
-      label_1.style.color = "white";
-      label_1.style.marginTop = "18px";
 
-      let input2 = document.createElement("input");
+      let div_2 = document.createElement("div");
 
-      input2.placeholder = "Enter your password";
-      input2.type = "password";
-      input2.style.border = "1px solid gray";
-      input2.style.padding = "12px";
-      input2.style.borderRadius = "3px";
-      input2.style.backgroundColor = "#e6dcdc";
-      input2.style.border = "none";
-      input2.style.fontSize = "18px";
+      let span_2 = document.createElement("span");
 
-      input2.onfocus = function () {
-        input2.style.outline = "none";
-      };
+      let input_2 = document.createElement("input");
+      input_2.placeholder = "Enter your password";
+      input_2.type = "password";
 
-      let label_2 = document.createElement("label2");
+      let div_3 = document.createElement("div");
+
+      let span_3 = document.createElement("span");
+
+      let input_3 = document.createElement("input");
+      input_3.placeholder = "comfirm password";
+      input_3.type = "password";
+
+      let label_3 = document.createElement("label");
+      label_3.innerHTML = "comfirm Password";
+
+      [input, input_1, input_2, input_3].forEach(function (el) {
+        el.style.border = "1px solid gray";
+        el.style.padding = "12px";
+        el.style.borderRadius = "3px";
+        el.style.backgroundColor = "#e6dcdc";
+        el.style.border = "none";
+        el.style.fontSize = "18px";
+        el.style.width = "100%";
+
+        el.onfocus = function () {
+          el.style.outline = "none";
+        };
+      });
+
+      let label_2 = document.createElement("label");
       label_2.innerHTML = "Password";
-      label_2.style.fontSize = "18px";
-      label_2.style.fontWeight = 600;
-      label_2.style.color = "white";
-      label_2.style.marginTop = "18px";
+
+      [label, label_1, label_2, label_3].forEach(function (ml) {
+        ml.style.fontSize = "18px";
+        ml.style.fontWeight = 600;
+        ml.style.color = "white";
+        ml.style.marginTop = "8px";
+      });
 
       let btn = document.createElement("button");
-      btn.innerHTML = "Log in";
-      btn.style.marginTop = "22px";
+      btn.innerHTML = "SUBMIT";
+      btn.type = "submit";
+      btn.style.marginTop = "18px";
       btn.style.padding = "12px";
       btn.style.border = "none";
       btn.style.fontSize = "18px";
       btn.style.backgroundColor = "#e6dcdc";
-      btn.style.borderRadius = "3px";
       btn.style.cursor = "pointer";
       btn.style.fontWeight = 600;
       btn.style.color = "#626387";
+      btn.style.width = "75%";
+      btn.style.borderRadius = "3px";
 
-      container.append(label);
-      container.append(input);
+      /*
+      - create a div element
+      - create a span element
+      - append the label, input and span in the div element
+      - append the div element to the container
 
-      container.append(label_1);
-      container.append(input1);
+      
+      */
 
-      container.append(label_2);
-      container.append(input2);
+      [div, div_1, div_2, div_3].forEach(function (el) {
+        el.style.gap = "5px";
+        el.style.display = "flex";
+        el.style.flexDirection = "column";
+      });
+
+      container.append(div);
+      div.append(label);
+      div.append(input);
+      div.append(span);
+
+      container.append(div_1);
+      div_1.append(label_1);
+      div_1.append(input_1);
+      div_1.append(span_1);
+
+      container.append(div_2);
+      div_2.append(label_2);
+      div_2.append(input_2);
+      div_2.append(span_2);
+
+      container.append(div_3);
+      div_3.append(label_3);
+      div_3.append(input_3);
+      div_3.append(span_3);
+
       container.append(btn);
+
+      container.onsubmit = function (e) {
+        e.preventDefault();
+        [input, input_1, input_2, input_3].forEach(function (el) {
+          console.log(el.parentElement.children[2]);
+
+          if (el.value === "") {
+            el.parentElement.children[2].innerHTML = "this fill is required";
+            el.parentElement.children[2].style.color = "red";
+          } else {
+            el.parentElement.children[2].innerHTML = "";
+          }
+        });
+      };
     </script>
   </body>
 </html>
